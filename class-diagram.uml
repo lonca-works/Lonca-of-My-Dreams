@@ -1,0 +1,29 @@
+@startuml
+
+class Member <<entity>> {
+  + firstName: string
+  + lastName: string
+  + email: string
+  + job: string
+  + city: string
+  + gender: string
+  + country: string
+  + status: string
+}
+
+class Admin <<entity>> {
+  +moderateRequests(member: Member): void
+}
+
+Member <|-- Admin : requestsApproval
+Admin --|> Member : Approvalrequest
+
+skinparam class {
+BackgroundColor yellow
+ArrowColor Yellow
+BorderColor OrangeRed
+skinparam stereotypeCBackgroundColor OrangeRed
+}
+
+@enduml
+
