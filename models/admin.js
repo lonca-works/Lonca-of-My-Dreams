@@ -15,7 +15,7 @@ const newMember = new Member(
 class Admin {
   moderateRequests(member) {
 
-    if (/* admin approval condition */) {
+    if (approved) {
       member.status = 'approved';
     } else {
       member.status = 'rejected';
@@ -26,6 +26,6 @@ class Admin {
 const admin = new Admin();
 admin.moderateRequests(newMember);
 
-console.log(newMember.status); // "approved" or "rejected"
+console.log(newMember.status);
 
 module.exports = { Admin };
