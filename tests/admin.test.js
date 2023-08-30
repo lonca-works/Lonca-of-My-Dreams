@@ -1,5 +1,5 @@
 const { Member } = require('./models/member.js');
-const { Admin } = require('./models./admin.js');
+const { Admin } = require('./models/admin.js');
 
 describe('Admin Class', () => {
     it('should approve a member if "approved" is true', () => {
