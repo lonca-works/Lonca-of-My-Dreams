@@ -19,7 +19,8 @@
   "homepage": "https://github.com/lonca-works/Lonca-of-My-Dreams#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "jest": "^29.6.4"
