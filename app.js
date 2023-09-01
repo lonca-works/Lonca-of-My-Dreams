@@ -11,19 +11,20 @@ const dbName = 'mydb';
 app.use(express.json());
 
 app.post('/apply', async (req, res) => {
-  
-  const { firstName, lastName, email, job, city, gender, country } = req.body;
+  try {
 
-  const newMember = new Member(
-    firstName,
-    lastName,
-    email,
-    job,
-    city,
-    gender,
-    country,
-    'pending'
-  );
+    const { firstName, lastName, email, job, city, gender, country } = req.body;
+
+    const newMember = new Member({
+      firstName,
+      lastName,
+      email,
+      job,
+      city,
+      gender,
+      country,
+      status: 'pending'
+    });
 
     const admin = new Admin();
 
@@ -31,16 +32,17 @@ app.post('/apply', async (req, res) => {
 
     const client = new MongoClient(url);
 
-  try {
     await client.connect();
     const db = client.db(dbName);
     const membersCollection = db.collection('members');
     await membersCollection.insertOne(newMember);
-  } finally {
-    client.close();
-  }
 
-  res.json({ status: newMember.status });
+    client.close();
+    res.json({ status: newMember.status });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server Error' });
+  }
 });
 
 
