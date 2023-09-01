@@ -1,5 +1,5 @@
-const { Member } = require('./models/member.js');
-const { Admin } = require('./models/admin.js');
+const { Member } = require('../models/member');
+const { Admin } = require('../models/admin');
 
 describe('Admin Class', () => {
     it('should approve a member if "approved" is true', () => {
@@ -33,6 +33,7 @@ describe('Admin Class', () => {
         );
 
         const admin = new Admin();
+        admin.moderateRequests(newMember, true);
         admin.moderateRequests(newMember, false);
 
         expect(newMember.status).toBe('rejected');

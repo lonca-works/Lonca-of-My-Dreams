@@ -1,5 +1,5 @@
 
-const { Member } = require('../member');
+const { Member } = require('../models/member');
 
 const newMember = new Member(
   'Arzu',
@@ -13,7 +13,7 @@ const newMember = new Member(
 );
 
 class Admin {
-  moderateRequests(member) {
+  moderateRequests(member, approved) {
 
     if (approved) {
       member.status = 'approved';

@@ -1,4 +1,4 @@
-const { Member } = require('./models/member.js');
+const { Member } = require('../models/member');
 
 describe('Member Class', () => {
     it('should create a member object with correct properties', () => {
