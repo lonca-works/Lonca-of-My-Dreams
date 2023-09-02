@@ -2,6 +2,7 @@ const express = require('express');
 const { Member } = require('./models/member');
 const { Admin } = require('./models/admin');
 const MongoClient = require('mongodb').MongoClient;
+const { connectToDatabase, getDbClient } = require('./mongodb-connection');
 
 const app = express();
 const port = 3000;
