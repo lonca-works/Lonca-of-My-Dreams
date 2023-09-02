@@ -1,5 +1,5 @@
 
-const { Member } = require('../models/member');
+const { Member } = require('./member');
 
 const newMember = new Member(
   'Arzu',
