@@ -8,6 +8,7 @@ class Member <<entity>> {
   + city: string
   + gender: string
   + country: string
+  + programinglanguage
   + status: string
 }
 

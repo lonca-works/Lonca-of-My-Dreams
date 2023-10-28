@@ -7,6 +7,7 @@ class Member {
         this.city = city;
         this.gender = gender;
         this.country = country;
+        this.programminglanguage = programminglanguage;
         this.status = status;
     }
 }
