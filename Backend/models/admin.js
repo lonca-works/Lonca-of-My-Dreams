@@ -9,6 +9,7 @@ const newMember = new Member(
   'London',
   'Female',
   'UK',
+  'Programming Language',
   'pending'
 );
 
